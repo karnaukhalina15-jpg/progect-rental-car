@@ -1,0 +1,65 @@
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 50px 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 50px 29px;
+  margin-bottom: 100px;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.loader {
+  text-align: center;
+  padding: 80px 0;
+  color: #8a8a89;
+  font-size: 18px;
+}
+
+.error {
+  text-align: center;
+  padding: 80px 0;
+  color: #ef4444;
+  font-size: 18px;
+}
+
+.loadMoreContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.loadMoreButton {
+  color: #0b74e5;
+  font-weight: 600;
+  text-decoration: underline;
+  font-size: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.loadMoreButton:hover {
+  color: #0962c4;
+}

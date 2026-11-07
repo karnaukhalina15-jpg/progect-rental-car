@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
@@ -19,8 +20,26 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "RentalCar",
-  description: "Reliable and budget-friendly rentals for any journey",
+  title: {
+    default: "RentalCar — Car Rental Service",
+    template: "%s | RentalCar",
+  },
+  description:
+    "Find and rent your perfect car with RentalCar. Explore our collection of vehicles and book your car easily online.",
+  keywords: [
+    "car rental",
+    "rent a car",
+    "car hire",
+    "vehicle rental",
+    "RentalCar",
+  ],
+  openGraph: {
+    title: "RentalCar — Car Rental Service",
+    description:
+      "Explore our collection of vehicles and book your perfect car with RentalCar.",
+    siteName: "RentalCar",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -34,7 +53,10 @@ export default function RootLayout({
         className={`${manrope.variable} ${inter.variable} ${manrope.className} antialiased bg-white text-gray-900 min-h-screen flex flex-col`}
       >
         <Providers>
-          <Header />
+          <Suspense fallback={null}>
+            <Header />
+          </Suspense>
+
           <main className="flex-grow">{children}</main>
         </Providers>
       </body>

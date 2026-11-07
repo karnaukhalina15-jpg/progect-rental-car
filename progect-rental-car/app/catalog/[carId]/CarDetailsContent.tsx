@@ -61,7 +61,6 @@ export default function CarDetailsContent({ car }: CarDetailsContentProps) {
   return (
     <div className={styles.container}>
       <div className={styles.contentWrapper}>
-        {/* Left column */}
         <div className={styles.leftColumn}>
           <div className={styles.imageWrapper}>
             <Image

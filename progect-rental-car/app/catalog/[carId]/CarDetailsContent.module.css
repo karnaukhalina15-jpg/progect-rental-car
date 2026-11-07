@@ -1,18 +1,23 @@
 .container {
   width: 1200px;
   margin: 0 auto;
-  padding-top: 84px;
   background-color: #fff;
 }
 .bookingSection {
   padding: 32px;
+  width: 100%;
+  border: 1px solid #dadde1;
+  border-radius: 12px;
+  background-color: #fff;
 }
 .contentWrapper {
   display: grid;
+  padding: 84px 0;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: #f5f5f5;
 }
 
 .leftColumn,
@@ -28,6 +33,10 @@
 
 .rightColumn {
   gap: 32px;
+  background-color: #fff;
+  padding: 8px 24px;
+  border: 1px solid #dadde1;
+  border-radius: 12px;
 }
 
 .imageWrapper {
@@ -89,7 +98,7 @@
 
 .price {
   margin: 0;
-  color: #3470ff;
+  color: #00aad4;
   font-size: 24px;
   font-weight: 600;
 }
@@ -145,7 +154,7 @@
 
 .specIcon {
   flex-shrink: 0;
-  color: #3470ff;
+  color: #00aad4;
 }
 
 .bookingDescription {
@@ -155,10 +164,6 @@
 }
 
 @media screen and (max-width: 1023px) {
-  .container {
-    padding: 48px 24px 80px;
-  }
-
   .contentWrapper {
     gap: 28px;
   }
@@ -170,55 +175,5 @@
   .rightColumn,
   .leftColumn {
     gap: 28px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .container {
-    padding: 32px 20px 60px;
-  }
-
-  .contentWrapper {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-
-  .leftColumn,
-  .rightColumn {
-    gap: 28px;
-  }
-
-  .imageWrapper {
-    aspect-ratio: 1 / 0.85;
-    border-radius: 14px;
-  }
-
-  .headerRow {
-    flex-wrap: wrap;
-  }
-
-  .carTitle {
-    width: 100%;
-    font-size: 20px;
-  }
-
-  .carId {
-    font-size: 13px;
-  }
-
-  .price {
-    font-size: 22px;
-  }
-
-  .sectionTitle {
-    font-size: 18px;
-  }
-
-  .description,
-  .conditionItem,
-  .featureItem,
-  .specItem,
-  .bookingDescription {
-    font-size: 13px;
   }
 }

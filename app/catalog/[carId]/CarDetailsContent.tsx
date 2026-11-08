@@ -89,7 +89,6 @@ export default function CarDetailsContent({ car }: CarDetailsContentProps) {
                   : "scale-100 blur-0 opacity-100"
               }`}
               priority
-              onLoad={() => setIsLoading(false)}
             />
           </div>
 

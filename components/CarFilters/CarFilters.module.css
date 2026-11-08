@@ -1,0 +1,270 @@
+.filtersForm {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  max-width: 924px;
+  margin: 0 auto;
+}
+
+.filterFields {
+  display: grid;
+  grid-template-columns: 204px 196px 320px;
+  align-items: start;
+  gap: 16px;
+  width: 752px;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+}
+
+.filterLabel {
+  color: #8d929a;
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.dropdownWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.selectButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  height: 44px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #101828;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.selectButton span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.selectedValue {
+  color: #101828;
+}
+
+.chevron {
+  flex-shrink: 0;
+  transition: transform 200ms ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.dropdownList {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 4px);
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-height: 272px;
+  margin: 0;
+  padding: 14px 18px;
+  overflow-y: auto;
+  list-style: none;
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 36px rgba(0, 0, 0, 0.02);
+}
+
+.dropdownList::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dropdownList::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #dadde1;
+}
+
+.dropdownOption {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #8d929a;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  cursor: pointer;
+  transition: color 150ms ease;
+}
+
+.dropdownOption:hover,
+.activeOption {
+  color: #101828;
+}
+
+.mileageInputs {
+  display: flex;
+  width: 100%;
+  height: 44px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.inputFrom,
+.inputTo {
+  box-sizing: border-box;
+  width: 50%;
+  min-width: 0;
+  height: 44px;
+  padding: 12px 24px;
+  border: none;
+  outline: none;
+  background: #ffffff;
+  color: #101828;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.inputFrom {
+  border-right: 1px solid #dadde1;
+}
+
+.inputFrom::placeholder,
+.inputTo::placeholder {
+  color: #101828;
+  opacity: 1;
+}
+
+.inputFrom:focus,
+.inputTo:focus {
+  outline-offset: -2px;
+}
+
+.inputFrom::-webkit-inner-spin-button,
+.inputFrom::-webkit-outer-spin-button,
+.inputTo::-webkit-inner-spin-button,
+.inputTo::-webkit-outer-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+.inputFrom,
+.inputTo {
+  appearance: textfield;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 156px;
+  padding-top: 24px;
+}
+
+.searchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 156px;
+  height: 44px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  background: #00aad4;
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+  transition: background-color 200ms ease;
+}
+
+.searchButton:hover {
+  background: #0093b8;
+}
+
+.clearButton {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #8d929a;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+  transition: color 150ms ease;
+}
+
+.clearButton:hover {
+  color: #101828;
+}
+
+.selectButton:focus-visible,
+.dropdownOption:focus-visible,
+.searchButton:focus-visible,
+.clearButton:focus-visible {
+  outline: 2px solid #3470ff;
+  outline-offset: 2px;
+}
+
+@media screen and (max-width: 1023px) {
+  .filtersForm {
+    flex-wrap: wrap;
+  }
+
+  .filterFields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .buttons {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .filterFields {
+    grid-template-columns: 1fr;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchButton {
+    width: 100%;
+  }
+}

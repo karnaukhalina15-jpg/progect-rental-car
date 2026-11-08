@@ -61,8 +61,8 @@
 .headerRow {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
+  justify-content: flex-start;
+  gap: 16px;
 }
 
 .carTitle {
@@ -75,7 +75,10 @@
 
 .carId {
   color: #8d929a;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25em;
+  margin: auto;
 }
 
 .locationAndPrice {
@@ -88,8 +91,7 @@
   align-items: center;
   gap: 6px;
   margin: 0;
-  color: #8d929a;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .location svg {
@@ -125,7 +127,6 @@
 
 .description {
   margin: 0;
-  color: #8d929a;
   font-size: 14px;
   line-height: 1.6;
 }

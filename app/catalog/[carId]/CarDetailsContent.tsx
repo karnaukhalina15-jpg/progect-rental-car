@@ -1,3 +1,6 @@
+"client";
+
+import { useState } from "react";
 import Image from "next/image";
 import RentalForm from "@/components/RentalForm/RentalForm";
 import type { Car } from "@/types/car";
@@ -36,7 +39,11 @@ function SpecIcon({ type }: { type: string }) {
 }
 
 export default function CarDetailsContent({ car }: CarDetailsContentProps) {
-  const article = car.img.match(/\/(\d+)-/)?.[1] ?? car.id.slice(0, 4);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const article = car.img
+    ? (car.img.match(/\/(\d+)-/)?.[1] ?? car.id.slice(0, 4))
+    : car.id.slice(0, 4);
 
   const specifications = [
     { label: "Year", value: car.year, icon: "year" },
@@ -62,14 +69,27 @@ export default function CarDetailsContent({ car }: CarDetailsContentProps) {
     <div className={styles.container}>
       <div className={styles.contentWrapper}>
         <div className={styles.leftColumn}>
-          <div className={styles.imageWrapper}>
+          <div
+            className={`${styles.imageWrapper} relative overflow-hidden bg-gray-200`}
+          >
+            {isLoading && (
+              <div className="absolute inset-0 bg-gray-300 animate-pulse flex items-center justify-center z-10">
+                <span className="text-gray-500 text-sm font-medium"></span>
+              </div>
+            )}
+
             <Image
               src={car.img}
               alt={`${car.brand} ${car.model}`}
               fill
               sizes="(max-width: 767px) 100vw, 50vw"
-              className={styles.carImage}
+              className={`${styles.carImage} object-cover duration-700 ease-in-out ${
+                isLoading
+                  ? "scale-105 blur-sm opacity-0"
+                  : "scale-100 blur-0 opacity-100"
+              }`}
               priority
+              onLoad={() => setIsLoading(false)}
             />
           </div>
 

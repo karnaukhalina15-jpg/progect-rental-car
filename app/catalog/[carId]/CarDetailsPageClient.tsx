@@ -43,9 +43,5 @@ export default function CarDetailsPageClient() {
     );
   }
 
-  return (
-    <main>
-      <CarDetailsContent car={car} />
-    </main>
-  );
+  return <CarDetailsContent car={car} />;
 }

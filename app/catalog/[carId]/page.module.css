@@ -3,8 +3,12 @@
   margin: 0 auto;
   padding: 48px 24px;
 }
-
-.loader,
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
 .error,
 .noResults {
   text-align: center;
@@ -35,6 +39,29 @@
   justify-content: center;
   margin-bottom: 96px;
 }
+.loader {
+  --color-1: #fff;
+  --color-2: #00aad4;
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  border: calc(5 * var(--size)) solid var(--color-1);
+  border-bottom-color: var(--color-2);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 .loadMoreButton {
   background: none;
@@ -54,4 +81,8 @@
 .loadMoreButton:disabled {
   cursor: not-allowed;
   opacity: 0.6;
+}
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
 }

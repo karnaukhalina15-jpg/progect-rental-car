@@ -1,12 +1,13 @@
 import { Suspense } from "react";
 import CarDetailsPageClient from "./CarDetailsPageClient";
+import styles from "./page.module.css";
 
 export default function CarDetailsPage() {
   return (
     <Suspense
       fallback={
-        <p style={{ textAlign: "center", padding: "40px" }}>
-          Loading car details...
+        <p className={styles.loaderWrapper}>
+          <span className={styles.loader}></span>
         </p>
       }
     >

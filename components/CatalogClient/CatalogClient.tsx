@@ -8,9 +8,9 @@ import CarFilters from "@/components/CarFilters/CarFilters";
 import SuccessModal from "@/components/SuccessModal/SuccessModal";
 import NotFoundCatalog from "@/components/NotFoundCatalog/NotFoundCatalog";
 import type { CarFiltersState, Car } from "@/types/car";
-import styles from "./page.module.css";
+import styles from "./CatalogClient.module.css";
 
-export default function CatalogPage() {
+export default function CatalogClient() {
   const [filters, setFilters] = useState<CarFiltersState>({});
   const [resetKey, setResetKey] = useState(0);
   const [searchVersion, setSearchVersion] = useState(0);
@@ -37,7 +37,7 @@ export default function CatalogPage() {
     isSuccess,
   } = useInfiniteQuery({
     queryKey: ["cars", filters],
-    queryFn: ({ pageParam = 1 }) =>
+    queryFn: ({ pageParam }) =>
       getCars({
         page: pageParam,
         perPage: 12,

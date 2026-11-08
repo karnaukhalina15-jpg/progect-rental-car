@@ -1,0 +1,117 @@
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 136px;
+  padding-bottom: 152px;
+}
+
+.image {
+  display: block;
+  width: 414px;
+  height: 388px;
+  object-fit: contain;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 351px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  color: #101828;
+}
+
+.description {
+  margin: 16px 0 0;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #101828;
+}
+
+.loadMoreButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 156px;
+  height: 44px;
+  margin-top: 40px;
+  padding: 12px;
+  border: 1px solid #00aad4;
+  border-radius: 12px;
+  background-color: transparent;
+  color: #101828;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.loadMoreButton:hover {
+  background-color: #e5f8fc;
+}
+
+@media (max-width: 767px) {
+  .notFound {
+    padding: 48px 20px;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 414px;
+    height: auto;
+  }
+
+  .content {
+    width: 100%;
+    max-width: 351px;
+    margin-top: 24px;
+  }
+
+  .title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .loadMoreButton {
+    margin-top: 32px;
+  }
+}
+
+.resetButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 156px;
+  height: 44px;
+  margin-top: 40px;
+  padding: 12px;
+  border: 1px solid #00aad4;
+  border-radius: 12px;
+  background-color: transparent;
+  color: #101828;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.resetButton:hover {
+  background-color: #e5f8fc;
+}

@@ -39,7 +39,7 @@ function SpecIcon({ type }: { type: string }) {
 }
 
 export default function CarDetailsContent({ car }: CarDetailsContentProps) {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading] = useState(true);
 
   const article = car.img
     ? (car.img.match(/\/(\d+)-/)?.[1] ?? car.id.slice(0, 4))

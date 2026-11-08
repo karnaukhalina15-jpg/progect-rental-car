@@ -2,7 +2,7 @@ import axios from "axios";
 import type { CarsResponse, Car } from "@/types/car";
 
 const api = axios.create({
-  baseURL: "https://car-rental-api.goit.study",
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
 });
 
 export interface GetCarsParams {
@@ -54,12 +54,6 @@ export const getCarById = async (id: string): Promise<Car> => {
   const response = await api.get<Car>(`/cars/${id}`);
   return response.data;
 };
-
-export interface BookingPayload {
-  name: string;
-  email: string;
-  comment?: string;
-}
 
 export interface BookingPayload {
   name: string;

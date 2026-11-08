@@ -9,7 +9,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  experimental: {},
   cacheComponents: true,
   partialPrefetching: true,
   reactCompiler: true,

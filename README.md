@@ -44,6 +44,24 @@ A modern, full-featured web application for a car rental company, developed as p
 
 To run this project locally, follow these steps:
 
-1. **Clone the repository:**
+# 1. Склонувати репозиторій
 
-   git clone [https://github.com/karnaukhalina15-jpg/progect-rental-car](https://github.com/karnaukhalina15-jpg/project-rental-car.git)
+git clone https://github.com/karnaukhalina15-jpg/progeсt-rental-car.git
+
+# 2. Перейти до папки проєкту
+
+cd progeсt-rental-car
+
+# 3. Встановити залежності
+
+npm install
+
+# 4. Створити файл .env.local та додати адресу API
+
+# (приклад вмісту файлу .env.local):
+
+# NEXT_PUBLIC_API_URL=https://car-rental-api.goit.global
+
+# 5. Запустити проєкт у режимі розробки
+
+npm run dev

@@ -46,7 +46,7 @@ To run this project locally, follow these steps:
 
 # 1. Склонувати репозиторій
 
-git clone https://github.com/karnaukhalina15-jpg/progeсt-rental-car.git
+git clone git@github.com:karnaukhalina15-jpg/progect-rental-car.git
 
 # 2. Перейти до папки проєкту
 

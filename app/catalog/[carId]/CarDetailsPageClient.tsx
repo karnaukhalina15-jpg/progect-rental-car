@@ -31,7 +31,14 @@ export default function CarDetailsPageClient() {
     console.error("Error loading car:", error);
 
     return (
-      <p style={{ textAlign: "center", padding: "40px" }}>
+      <p
+        style={{
+          textAlign: "center",
+          padding: "40px",
+          justifyContent: "center",
+          textAlignLast: "center",
+        }}
+      >
         Failed to load car details. Please try again.
       </p>
     );

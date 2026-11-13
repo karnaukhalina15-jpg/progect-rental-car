@@ -39,7 +39,7 @@ function SpecIcon({ type }: { type: string }) {
 }
 
 export default function CarDetailsContent({ car }: CarDetailsContentProps) {
-  const [isLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   const article = car.img
     ? (car.img.match(/\/(\d+)-/)?.[1] ?? car.id.slice(0, 4))
@@ -89,6 +89,8 @@ export default function CarDetailsContent({ car }: CarDetailsContentProps) {
                   : "scale-100 blur-0 opacity-100"
               }`}
               priority
+              onLoad={() => setIsLoading(false)}
+              onError={() => setIsLoading(false)}
             />
           </div>
 

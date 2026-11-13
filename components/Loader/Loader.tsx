@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import styles from "./SuccessModal.module.css";
+import styles from "./Loader.module.css";
 
 export default function SuccessModal() {
   useEffect(() => {
@@ -24,7 +24,9 @@ export default function SuccessModal() {
           <h2 className={styles.title}>Loading...</h2>
 
           <p className={styles.description}>
-            Please wait while we process your request.
+            Please wait while we fetch the best
+            <br />
+            cars for you.
           </p>
         </div>
       </div>

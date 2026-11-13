@@ -78,9 +78,10 @@
 }
 
 .description {
-  width: 100%;
+  width: 351px;
   margin: 0;
   color: #101828;
+  padding: 0 10px;
   font-family: "Manrope", sans-serif;
   font-size: 16px;
   font-weight: 500;

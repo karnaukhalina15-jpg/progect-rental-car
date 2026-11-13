@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent, type ChangeEvent } from "react";
 import axios from "axios";
+import Notification from "@/components/Notification/Notification";
 import { createBookingRequest } from "@/lib/api";
 import styles from "./RentalForm.module.css";
 
@@ -304,16 +305,10 @@ export default function RentalForm({ carId }: RentalFormProps) {
       </div>
 
       {successMessage && (
-        <p className={styles.successMessage} role="status">
-          {successMessage}
-        </p>
+        <Notification message={successMessage} type="success" />
       )}
 
-      {errorMessage && (
-        <p className={styles.errorMessage} role="alert">
-          {errorMessage}
-        </p>
-      )}
+      {errorMessage && <Notification message={errorMessage} type="error" />}
 
       <button
         type="submit"

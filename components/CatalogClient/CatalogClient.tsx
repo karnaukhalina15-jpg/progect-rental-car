@@ -5,7 +5,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { getCars } from "@/lib/api";
 import CarCard from "@/components/CarCard/CarCard";
 import CarFilters from "@/components/CarFilters/CarFilters";
-import SuccessModal from "@/components/SuccessModal/SuccessModal";
+import Loader from "@/components/Loader/Loader";
 import NotFoundCatalog from "@/components/NotFoundCatalog/NotFoundCatalog";
 import type { CarFiltersState, Car } from "@/types/car";
 import styles from "./CatalogClient.module.css";
@@ -68,7 +68,7 @@ export default function CatalogClient() {
     <div className={styles.container}>
       <CarFilters key={resetKey} onFilterChange={handleFilterChange} />
 
-      {isFetching && !isFetchingNextPage && <SuccessModal />}
+      {isFetching && !isFetchingNextPage && <Loader />}
 
       {isError && (
         <div className={styles.error}>
@@ -81,11 +81,11 @@ export default function CatalogClient() {
       )}
 
       {cars.length > 0 && (
-        <div className={styles.grid}>
+        <ul className={styles.grid}>
           {cars.map((car) => (
             <CarCard key={car.id} car={car} />
           ))}
-        </div>
+        </ul>
       )}
 
       {cars.length > 0 && hasNextPage && (
@@ -101,7 +101,7 @@ export default function CatalogClient() {
         </div>
       )}
 
-      {isFetchingNextPage && <SuccessModal />}
+      {isFetchingNextPage && <Loader />}
     </div>
   );
 }

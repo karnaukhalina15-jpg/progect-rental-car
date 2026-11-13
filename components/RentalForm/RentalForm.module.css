@@ -56,7 +56,7 @@
 
 .textareaWrapper textarea {
   min-height: 58px;
-  resize: vertical;
+  resize: none;
 }
 
 .floatingLabel {
@@ -106,8 +106,8 @@
 }
 
 .invalid {
-  border-color: #ec383b !important;
-  background-color: #ffdfdf !important;
+  border-color: #ec383b;
+  background-color: #ffdfdf;
 }
 
 .invalid .floatingLabel {
@@ -158,6 +158,10 @@
 .submitButton:focus-visible {
   outline-offset: 3px;
 }
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 
 .successMessage {
   color: #00aad4;
@@ -196,7 +200,8 @@
 @media screen and (max-width: 767px) {
   .form {
     width: 100%;
+    min-height: auto;
     height: auto;
-    padding: 24px 16px;
+    padding: 0;
   }
 }

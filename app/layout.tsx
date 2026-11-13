@@ -49,15 +49,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${manrope.variable} ${inter.variable} ${manrope.className} antialiased bg-white text-gray-900 min-h-screen flex flex-col`}
-      >
+      <body className={`${manrope.variable} ${inter.variable}`}>
         <Providers>
           <Suspense fallback={null}>
             <Header />
           </Suspense>
 
-          <main className="flex-grow">{children}</main>
+          <main className="appMain">{children}</main>
         </Providers>
       </body>
     </html>
